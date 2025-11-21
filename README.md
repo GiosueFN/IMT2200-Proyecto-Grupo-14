@@ -1,4 +1,35 @@
-#### 1. Contexto y motivaciones:
+# Análisis de Calidad del Aire - La Florida/Macul, RM
+
+## Descripción
+Análisis de datos de calidad del aire del sistema SINCA para el sector sur-oriente de Santiago, específicamente las comunas de La Florida y Macul. Este proyecto identifica patrones de contaminación y evalúa riesgos para la salud pública.
+
+## Objetivo
+Analizar la evolución de contaminantes atmosféricos y estimar el riesgo sanitario para habitantes del sector, mediante datos del monitor ubicado en la Municipalidad de La Florida.
+
+### Preguntas de Investigación
+- Comparación de niveles de CO vs otros contaminantes
+- Tendencias temporales de PM2.5 en últimos años
+- Relación entre O3 y NOX
+- Modelo predictivo de PM2.5
+- Evaluación de riesgo sanitario por superación de normas
+
+### Configuración de Datos
+- Fuente: Sistema SINCA (sinca.mma.gob.cl)
+- Monitor: Municipalidad de La Florida
+- Contaminantes: PM2.5, PM10, CO, O3, NOX
+- Período: [2010] - [2025]
+
+### Audiencia Objetivo
+- Ciudadanía general
+- Autoridades ambientales
+- Instituciones educativas y de salud
+
+### Pre-requisitos
+bash
+Python 3.8+
+Jupyter Notebook
+
+### 1. Contexto y motivaciones:
 La calidad del aire es un tema súper importante hoy en día, especialmente en Santiago, donde hay un montón de cosas que la empeoran. Por ejemplo, todos los autos que andan por la calle, las fábricas, la contaminación que a veces generamos nosotros mismos y hasta cómo es la ciudad geográficamente, hacen que tengamos niveles de contaminación súper altos en el aire. Por eso, nos pusimos a pensar en este tema tan actual y se nos ocurrió buscar una solución usando unos aparatos que monitorean la contaminación y que están conectados al SINCA.
 
 En particular, nos enfocamos en unos dispositivos que están en la Municipalidad de La Florida. Estos aparatos están analizando la contaminación del aire y sus diferentes componentes en varias zonas de Chile. Elegimos este dispositivo porque la zona que monitorea también incluye una parte de Macul, donde está la Pontificia Universidad Católica de Chile. Como pasamos la mayor parte del tiempo ahí, nos preocupa mucho la calidad del aire que respiramos. Pensamos en todas las enfermedades respiratorias que podríamos contraer, que nos podrían llevar al hospital o, en el peor de los casos, a algo mucho más grave. Los altos niveles de contaminación son factores directos en la aparición y agravamiento de enfermedades respiratorias, cardiovasculares y alérgicas. En ese contexto, buscamos contribuir a la concientización ciudadana y a la toma de decisiones informadas por parte de organismos públicos como el Ministerio del Medio Ambiente, las municipalidades y los servicios de salud, promoviendo la generación de conocimiento basado en datos abiertos. Además, nos dimos cuenta de que la gente de La Florida y de las comunas cercanas, como la nuestra, también está expuesta a estos riesgos, lo que hace que este problema sea aún más relevante para la comunidad en general. Queremos contribuir a que la gente tome conciencia de lo importante que es respirar aire limpio y cómo esto afecta directamente nuestra salud y bienestar a largo plazo. Es un tema que nos toca de cerca y sentimos que podemos aportar con este proyecto.

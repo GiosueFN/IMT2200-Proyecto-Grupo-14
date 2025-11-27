@@ -149,29 +149,31 @@
     }
 
     .gallery{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 900px){
-      .gallery{grid-template-columns:1fr}
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center; /* centra las tarjetas */
     }
 
+    /* Hacemos cada tarjeta (figure) más grande */
     figure{
-      margin:0;
+      margin: 0;
+      width: min(980px, 100%);  /* grande, pero responsivo */
       border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--border);
+      overflow: hidden;
+      border: 1px solid var(--border);
       background: rgba(7,10,16,.35);
       box-shadow: var(--shadow);
     }
+
+    /* La imagen ocupa todo el ancho y se ve grande */
     figure img{
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit: contain; /* conserva el gráfico sin recortar */
+      width: 100%;
+      height: auto;
+      display: block;
       background: #0b1020;
     }
+    
     figcaption{
       padding: 12px 12px 14px;
       color: var(--muted);
@@ -302,14 +304,6 @@
           </figcaption>
         </figure>
       
-        <figure>
-          <img src="assets/p2_pm25_estacionalidad.png" alt="PM2,5 por mes/estación o distribución">
-          <figcaption>
-            <span class="cap-title">Pregunta 2 · PM2,5 por mes/estación (extra)</span>
-            Segunda vista para reforzar si hay mejora/deterioro y en qué época del año es peor.
-          </figcaption>
-        </figure>
-      
         <!-- P3 -->
         <figure>
           <img src="assets/p3_o3_vs_nox.png" alt="Relación entre O3 y NOx">
@@ -321,10 +315,19 @@
       
         <!-- P4 -->
         <figure>
-          <img src="assets/p4_modelo_prediccion_pm25.png" alt="Modelo predictivo PM2,5 (métricas o predicción)">
+          <img src="assets/hora_pm2.png" alt="Promedio de PM2,5 por hora del día">
           <figcaption>
             <span class="cap-title">Pregunta 4 · Predicción de PM2,5</span>
-            Desempeño del modelo (ej: predicho vs real, RMSE/R², o matriz de confusión si fue clasificación).
+            Desempeño del modelo.
+          </figcaption>
+        </figure>
+      
+        <!-- P4 -->
+        <figure>
+          <img src="assets/dia_pm2.png" alt="Promedio de PM2,5 por día de la semana">
+          <figcaption>
+            <span class="cap-title">Pregunta 4 · Predicción de PM2,5</span>
+            Desempeño del modelo.
           </figcaption>
         </figure>
       

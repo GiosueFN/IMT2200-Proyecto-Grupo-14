@@ -23,35 +23,15 @@
 
     *{box-sizing:border-box}
     html,body{height:100%}
-
-    /* ✅ FONDO: negro sólido siempre */
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      background: #070a10; /* sólido */
-      line-height:1.55;
-      position: relative;
-    }
-
-    /* ✅ Luces SOLO arriba */
-    body::before{
-      content:"";
-      position: fixed; /* se queda arriba mientras scrolleas */
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
       background:
         radial-gradient(900px 350px at 15% 10%, rgba(96,165,250,.18), transparent 55%),
-        radial-gradient(900px 350px at 85% 15%, rgba(52,211,153,.14), transparent 60%);
-    }
-
-    /* ✅ Corta las luces gradualmente, evita “línea” a mitad de página */
-    @supports (-webkit-mask-image: linear-gradient(#000, transparent)){
-      body::before{
-        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 70%);
-                mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 70%);
-      }
+        radial-gradient(900px 350px at 85% 15%, rgba(52,211,153,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg), #070a10);
+      line-height:1.55;
     }
 
     a{color:var(--accent); text-decoration:none}
@@ -168,18 +148,17 @@
       gap: 14px;
     }
 
-    /* ✅ Galería: una sola columna */
     .gallery{
       display: flex;
       flex-direction: column;
       gap: 18px;
-      align-items: center;
+      align-items: center; /* centra las tarjetas */
     }
 
-    /* ✅ Cuadros grandes */
+    /* Hacemos cada tarjeta (figure) más grande */
     figure{
       margin: 0;
-      width: min(980px, 100%);
+      width: min(980px, 100%);  /* grande, pero responsivo */
       border-radius: var(--radius);
       overflow: hidden;
       border: 1px solid var(--border);
@@ -187,49 +166,25 @@
       box-shadow: var(--shadow);
     }
 
-    /* Encabezado dentro del mismo cuadro (arriba de la imagen) */
-    .fig-head{
-      padding: 12px 12px 14px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(15,23,42,.35);
-    }
-
-    .cap-title{
-      color: var(--text);
-      font-weight: 650;
-      display:block;
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    /* Contenedor por si hay 2 imágenes (P4) */
-    .fig-images{
-      display: grid;
-      gap: 12px;
-      padding: 12px;
-    }
-
+    /* La imagen ocupa todo el ancho y se ve grande */
     figure img{
       width: 100%;
       height: auto;
       display: block;
       background: #0b1020;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.08);
     }
-
-    /* Texto debajo dentro del mismo cuadro */
+    
     figcaption{
       padding: 12px 12px 14px;
+      color: var(--muted);
+      font-size: .95rem;
       border-top: 1px solid var(--border);
-      background: rgba(15,23,42,.25);
     }
-
-    .caption-text{
-      margin: 0;
+    .cap-title{
       color: var(--text);
-      font-size: 1rem;
-      line-height: 1.55;
+      font-weight: 650;
+      display:block;
+      margin-bottom: 4px;
     }
 
     footer{
@@ -252,6 +207,7 @@
       background: rgba(15,23,42,.45);
       color: var(--muted);
     }
+
   </style>
 </head>
 
